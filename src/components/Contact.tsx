@@ -32,12 +32,24 @@ const icons: Record<string, React.ReactNode> = {
       <path d="M18.9 4h2.9l-6.3 7.2L23 20h-5.8l-4.5-5.9L7.5 20H4.6l6.7-7.7L4 4h5.9l4.1 5.4L18.9 4Zm-1 14.4h1.6L7.2 5.5H5.5l12.4 12.9Z" />
     </svg>
   ),
+  scholar: (
+    <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4">
+      <path d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3Zm-7 9.2V16c0 2.2 3.1 4 7 4s7-1.8 7-4v-3.8l-7 3.8-7-3.8Z" />
+    </svg>
+  ),
+  leetcode: (
+    <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4">
+      <path d="M9.5 3 3 9.6l6.5 6.6 1.5-1.5-5-5.1L11 4.5 9.5 3Zm2 12.4L13 16.9l3.5-3.6L21 17.9l-1.5 1.5-4-4-3 3.1L11 15.4Z" />
+    </svg>
+  ),
 };
 
 const links = [
   { key: "email", label: "Email", href: `mailto:${socials.email}` },
   { key: "github", label: "GitHub", href: socials.github },
   { key: "linkedin", label: "LinkedIn", href: socials.linkedin },
+  { key: "scholar", label: "Google Scholar", href: socials.scholar },
+  { key: "leetcode", label: "LeetCode", href: socials.leetcode },
   { key: "twitter", label: "Twitter", href: socials.twitter },
 ].filter((link) => link.href);
 

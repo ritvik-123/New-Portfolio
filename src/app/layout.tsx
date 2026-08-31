@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Your Name — Portfolio",
-  description: "Portfolio site showcasing projects, papers, and contact info.",
+  title: "Ritvik Mahapatra — Portfolio",
+  description:
+    "AI Engineer building end-to-end ML systems — computer vision, NLP, and deployment engineering.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

@@ -16,21 +16,29 @@ export default function Hero() {
       >
         {profile.location}
       </p>
-      <h1
-        className="animate-fade-up text-4xl font-bold tracking-tight sm:text-6xl"
-        style={{ animationDelay: "120ms" }}
-      >
-        {profile.name}
+      <h1 className="flex flex-col gap-1">
+        <span
+          className="animate-fade-up text-xl font-medium text-zinc-500 dark:text-zinc-400"
+          style={{ animationDelay: "100ms" }}
+        >
+          {profile.greeting[0]}
+        </span>
+        <span
+          className="animate-fade-up text-4xl font-bold tracking-tight sm:text-6xl"
+          style={{ animationDelay: "160ms" }}
+        >
+          {profile.greeting[1]}
+        </span>
       </h1>
       <h2
         className="animate-fade-up text-xl font-medium text-accent sm:text-2xl"
-        style={{ animationDelay: "180ms" }}
+        style={{ animationDelay: "220ms" }}
       >
         {profile.title}
       </h2>
       <p
         className="animate-fade-up max-w-xl text-lg leading-relaxed text-zinc-600 dark:text-zinc-400"
-        style={{ animationDelay: "240ms" }}
+        style={{ animationDelay: "280ms" }}
       >
         {profile.tagline}
       </p>
