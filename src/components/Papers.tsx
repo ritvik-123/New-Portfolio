@@ -9,7 +9,7 @@ export default function Papers() {
         {papers.map((paper) => (
           <div
             key={paper.title}
-            className="rounded-2xl border border-border bg-card p-5 shadow-sm transition-all hover:-translate-y-1 hover:border-accent/40 hover:shadow-lg"
+            className="glass rounded-2xl p-5 shadow-sm transition-all hover:-translate-y-1 hover:border-accent/40 hover:shadow-lg"
           >
             <h3 className="text-lg font-semibold">
               {paper.link ? (

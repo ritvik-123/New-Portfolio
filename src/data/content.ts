@@ -1,5 +1,16 @@
 import { withBasePath } from "@/lib/basePath";
 
+export const images = {
+  background: withBasePath("/images/background.jpg"),
+  avatar: withBasePath("/images/avatar.jpg"),
+  sideAvatar: withBasePath("/images/side-avatar.jpg"),
+  cs: withBasePath("/images/cs.jpg"),
+  mechHero: withBasePath("/images/mech-proj1.jpg"),
+  mechAccent: withBasePath("/images/mech-proj4.jpg"),
+  faceTracking: withBasePath("/images/mech-proj2.jpg"),
+  rotacam: withBasePath("/images/mech-proj3.jpg"),
+};
+
 export const profile = {
   name: "Ritvik Mahapatra",
   greeting: ["Wassup gng!!!", "Ritvik here!"],
@@ -12,7 +23,8 @@ export const profile = {
   ],
   location: "Fresno, CA",
   resumeUrl: withBasePath("/resume.pdf"),
-  avatarUrl: "https://avatars.githubusercontent.com/u/78790297?v=4",
+  avatarUrl: images.avatar,
+  sideAvatarUrl: images.sideAvatar,
 };
 
 export const socials = {
@@ -24,6 +36,55 @@ export const socials = {
   twitter: "",
 };
 
+export type SkillGroup = { label: string; skills: string[] };
+
+export const skills: SkillGroup[] = [
+  { label: "Programming Languages", skills: ["C", "C++", "C#", "Python", "Java", "SQL"] },
+  {
+    label: "ML / DL Frameworks",
+    skills: [
+      "PyTorch",
+      "TensorFlow/Keras",
+      "NumPy",
+      "scikit-learn",
+      "Hugging Face Transformers",
+      "Sentence-Transformers",
+      "MediaPipe",
+      "OpenCV",
+    ],
+  },
+  { label: "Backend & Deployment", skills: ["FastAPI", "Flask", "Docker", "Groq API"] },
+  {
+    label: "Cloud & MLOps",
+    skills: [
+      "Google Cloud Platform",
+      "Cloud Run",
+      "Cloud Build",
+      "Firestore",
+      "Cloud Storage",
+      "Cloud Scheduler",
+      "AWS",
+      "Azure",
+      "CI/CD",
+      "MLOps",
+    ],
+  },
+  { label: "Data & Databases", skills: ["MySQL", "MongoDB", "PySpark", "Hive", "Hadoop HDFS"] },
+  {
+    label: "AI & ML Concepts",
+    skills: [
+      "Machine Learning",
+      "Deep Learning",
+      "NLP",
+      "Computer Vision",
+      "Vision Transformers",
+      "Generative AI",
+      "LLMs",
+    ],
+  },
+  { label: "Other Tools", skills: ["Unity", "XR Interaction Toolkit", "OpenXR", "Git", "MATLAB"] },
+];
+
 export type ProjectCategory = "mechatronics" | "cs";
 
 export type Project = {
@@ -31,17 +92,30 @@ export type Project = {
   description: string;
   tags: string[];
   category: ProjectCategory;
+  featured?: boolean;
+  image?: string;
   link?: string;
   repo?: string;
 };
 
-export const projectCategories: Record<ProjectCategory, string> = {
-  mechatronics: "Bachelor's — Mechatronics Engineering, Manipal University Jaipur",
-  cs: "Master's — Computer Science, CSU Fresno",
+export const projectCategories: Record<
+  ProjectCategory,
+  { label: string; short: string; heroImage: string }
+> = {
+  mechatronics: {
+    label: "Bachelor's — Mechatronics Engineering, Manipal University Jaipur",
+    short: "Mechatronics",
+    heroImage: images.mechHero,
+  },
+  cs: {
+    label: "Master's — Computer Science, CSU Fresno",
+    short: "Computer Science",
+    heroImage: images.cs,
+  },
 };
 
 export const projects: Project[] = [
-  // Mechatronics (B.Tech)
+  // Mechatronics (B.Tech) — 5
   {
     title: "ML in Manufacturing — Quality Assessment",
     description:
@@ -56,6 +130,7 @@ export const projects: Project[] = [
       "Arduino-based object detector and following camera with 2 degrees of freedom, using ultrasonic sensors to track and follow objects in real time.",
     tags: ["Arduino", "C++", "Robotics"],
     category: "mechatronics",
+    image: images.rotacam,
     repo: "https://github.com/ritvik-123/PBL-ObjectDetection-Follower",
   },
   {
@@ -64,6 +139,7 @@ export const projects: Project[] = [
       "Real-time face detection via OpenCV Haar cascades driving a two-servo (2 DOF) Arduino-controlled camera mount for continuous face tracking.",
     tags: ["OpenCV", "Arduino", "C++"],
     category: "mechatronics",
+    image: images.faceTracking,
     repo: "https://github.com/ritvik-123/PBL-Face-Tracking-Camera",
   },
   {
@@ -83,13 +159,14 @@ export const projects: Project[] = [
     repo: "https://github.com/ritvik-123/ML-Dog-Vision",
   },
 
-  // CS (M.S.)
+  // CS (M.S.) — 6
   {
     title: "LiftFormVision",
     description:
       "Locally-deployed computer-vision app that analyzes barbell exercise video (squat, overhead press, barbell row) and reports form errors in real time, no coach required. Squat depth-error detection reaches 0.846 F1; overhead press uses a temporal-CNN knee-error classifier. Supports video upload and live-camera capture through a Flask app running per-exercise isolated inference pipelines.",
     tags: ["Python", "Flask", "MediaPipe", "TensorFlow", "OpenCV"],
     category: "cs",
+    featured: true,
     repo: "https://github.com/ritvik-123/LiftFormVision",
   },
   {
@@ -98,6 +175,7 @@ export const projects: Project[] = [
       "Master's culminating project: the modeling and experimentation behind LiftFormVision, using subsets of Fitness-AQA (real gym footage, not mocap) to engineer features, calibrate thresholds, and train the temporal-CNN knee-error classifier that the deployed app runs.",
     tags: ["Python", "MediaPipe", "TensorFlow", "Jupyter"],
     category: "cs",
+    featured: true,
     repo: "https://github.com/ritvik-123/298-Major-Project",
   },
   {
@@ -106,6 +184,7 @@ export const projects: Project[] = [
       "Full-stack NLP system classifying sentences into 4 oppression types (ideological, institutionalized, interpersonal, internalized) using sentence embeddings + SVD + logistic regression, reaching 77.8% accuracy and 96.3% top-2 accuracy. Deployed on Google Cloud Run with GCS-based model hot-reloading and closed-loop weekly retraining from user feedback.",
     tags: ["Python", "FastAPI", "scikit-learn", "GCP", "Docker"],
     category: "cs",
+    featured: true,
     link: "https://emp-project-452416352424.us-central1.run.app",
     repo: "https://github.com/ritvik-123/EMP-Project",
   },
@@ -115,6 +194,7 @@ export const projects: Project[] = [
       "Shared Unity/XR testbed built for a Human-Computer Interaction course — persistent XR rig, event-driven feedback, and a modular object-manipulation framework supporting 6 HCI interaction techniques, validated through user testing with 10+ participants.",
     tags: ["Unity", "C#", "XR Interaction Toolkit"],
     category: "cs",
+    featured: true,
     repo: "https://github.com/ritvik-123/Unity-Based-VR-Environment",
   },
   {
@@ -126,22 +206,6 @@ export const projects: Project[] = [
     repo: "https://github.com/ritvik-123/AlienFury-CSCI-291t-AGD-MidGame",
   },
   {
-    title: "Road Rash — OpenGL Racing Game",
-    description:
-      "Final project for Advanced Game Development: an obstacle-dodging bike racing game in OpenGL/GLUT with 3 levels, day/night environment variation, and sprite-based character animation.",
-    tags: ["C++", "OpenGL", "GLUT"],
-    category: "cs",
-    repo: "https://github.com/ritvik-123/RoadRash",
-  },
-  {
-    title: "Air Pollution Data Visualization",
-    description:
-      "Analysis of relationships between air pollution indicators and health metrics using SQL for querying/transformation and Tableau for interactive dashboards.",
-    tags: ["SQL", "Tableau", "MySQL"],
-    category: "cs",
-    repo: "https://github.com/ritvik-123/226-FinalProject-DataViz",
-  },
-  {
     title: "Essay Rubric Text Classification",
     description:
       "Classifies IELTS writing-section essays against grading rubrics (task response, coherence & cohesion, lexical resource) using fine-tuned BERT embeddings, to help graders see submissions broken down by requirement.",
@@ -150,6 +214,8 @@ export const projects: Project[] = [
     repo: "https://github.com/ritvik-123/264-Text-classification",
   },
 ];
+
+export const featuredProjects = projects.filter((p) => p.featured);
 
 export type Paper = {
   title: string;

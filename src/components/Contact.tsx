@@ -66,7 +66,7 @@ export default function Contact() {
           <a
             key={link.key}
             href={link.href}
-            className="flex items-center gap-2 rounded-full border border-border bg-card px-5 py-2.5 text-sm font-medium shadow-sm transition-all hover:-translate-y-0.5 hover:border-accent/40 hover:text-accent hover:shadow-md"
+            className="glass flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium shadow-sm transition-all hover:-translate-y-0.5 hover:border-accent/40 hover:text-accent hover:shadow-md"
           >
             {icons[link.key]}
             {link.label}
