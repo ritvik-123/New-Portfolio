@@ -11,10 +11,10 @@ export default function Home() {
     <main className="mx-auto w-full max-w-4xl flex-1 px-6">
       <Hero />
       <About />
-      <Skills />
       <FeaturedProjects />
       <DegreeExplorer />
       <Papers />
+      <Skills />
       <Contact />
     </main>
   );

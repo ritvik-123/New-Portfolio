@@ -117,11 +117,12 @@ export const projectCategories: Record<
 export const projects: Project[] = [
   // Mechatronics (B.Tech) — 5
   {
-    title: "ML in Manufacturing — Quality Assessment",
+    title: "Quality Detection using CV in Production Line",
     description:
       "Three case studies applying ML to a manufacturing line: Random Forest failure-type prediction (90% accuracy), YOLOv3 + K-Means product segmentation on a conveyor belt, and a MobileNetV2 transfer-learning defect classifier (89.5% accuracy) exported to quantized TFLite for on-device QC inference.",
     tags: ["Python", "TensorFlow", "YOLOv3", "scikit-learn", "OpenCV"],
     category: "mechatronics",
+    featured: true,
     repo: "https://github.com/ritvik-123/Major-Project-ML-in-Manufacturing",
   },
   {
@@ -175,7 +176,6 @@ export const projects: Project[] = [
       "Master's culminating project: the modeling and experimentation behind LiftFormVision, using subsets of Fitness-AQA (real gym footage, not mocap) to engineer features, calibrate thresholds, and train the temporal-CNN knee-error classifier that the deployed app runs.",
     tags: ["Python", "MediaPipe", "TensorFlow", "Jupyter"],
     category: "cs",
-    featured: true,
     repo: "https://github.com/ritvik-123/298-Major-Project",
   },
   {

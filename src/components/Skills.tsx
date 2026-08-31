@@ -5,22 +5,18 @@ export default function Skills() {
   return (
     <section id="skills" className="scroll-mt-20 py-16">
       <SectionHeading>Skills</SectionHeading>
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="glass flex flex-col divide-y divide-border rounded-2xl px-5 shadow-sm">
         {skills.map((group) => (
-          <div key={group.label} className="glass rounded-2xl p-5 shadow-sm">
-            <h3 className="mb-3 text-sm font-semibold tracking-wide text-accent uppercase">
+          <div
+            key={group.label}
+            className="flex flex-col gap-2 py-3 sm:flex-row sm:items-baseline sm:gap-4"
+          >
+            <h3 className="shrink-0 text-xs font-semibold tracking-wide text-accent uppercase sm:w-44">
               {group.label}
             </h3>
-            <div className="flex flex-wrap gap-2">
-              {group.skills.map((skill) => (
-                <span
-                  key={skill}
-                  className="rounded-full bg-accent-soft px-3 py-1 text-xs font-medium text-accent"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
+            <p className="text-sm text-zinc-600 dark:text-zinc-400">
+              {group.skills.join(" · ")}
+            </p>
           </div>
         ))}
       </div>
