@@ -1,3 +1,5 @@
+import { withBasePath } from "@/lib/basePath";
+
 export const profile = {
   name: "Ritvik Mahapatra",
   greeting: ["Wassup gng!!!", "Ritvik here!"],
@@ -9,7 +11,7 @@ export const profile = {
     "My work sits at the intersection of computer vision, NLP, and deployment engineering — applying pose estimation and deep learning to real-time video analysis, and building classification pipelines that go from research notebook to a live, self-improving cloud service.",
   ],
   location: "Fresno, CA",
-  resumeUrl: "/resume.pdf",
+  resumeUrl: withBasePath("/resume.pdf"),
   avatarUrl: "https://avatars.githubusercontent.com/u/78790297?v=4",
 };
 
