@@ -215,7 +215,16 @@ export const projects: Project[] = [
   },
 ];
 
-export const featuredProjects = projects.filter((p) => p.featured);
+const featuredOrder = [
+  "LiftFormVision",
+  "EMP — Oppression-Type Sentence Classifier",
+  "Unity VR Interaction Environment",
+  "Quality Detection using CV in Production Line",
+];
+
+export const featuredProjects = featuredOrder.map(
+  (title) => projects.find((p) => p.title === title)!,
+);
 
 export type Paper = {
   title: string;
