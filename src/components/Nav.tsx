@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -14,10 +15,30 @@ const links = [
 
 export default function Nav() {
   const pathname = usePathname();
+  const [scrolled, setScrolled] = useState(false);
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolled(window.scrollY > 12);
+      const height = document.documentElement.scrollHeight - window.innerHeight;
+      setProgress(height > 0 ? Math.min(100, (window.scrollY / height) * 100) : 0);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="glass sticky top-0 z-50 border-b">
-      <nav className="mx-auto flex max-w-4xl flex-wrap items-center justify-between gap-3 px-6 py-4">
+    <header
+      className={`sticky top-0 z-50 border-b transition-colors duration-300 ${
+        scrolled ? "glass-strong shadow-sm" : "border-transparent bg-transparent"
+      }`}
+    >
+      <nav
+        aria-label="Primary"
+        className="mx-auto flex max-w-4xl flex-wrap items-center justify-between gap-3 px-6 py-4"
+      >
         <Link href="/" className="font-bold tracking-tight text-accent">
           Portfolio
         </Link>
@@ -40,6 +61,11 @@ export default function Nav() {
           })}
         </ul>
       </nav>
+      <div
+        className="h-0.5 bg-accent transition-[width] duration-150"
+        style={{ width: `${progress}%` }}
+        aria-hidden="true"
+      />
     </header>
   );
 }

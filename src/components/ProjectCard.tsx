@@ -3,13 +3,25 @@ import type { Project } from "@/data/content";
 export default function ProjectCard({ project }: { project: Project }) {
   return (
     <div className="group glass overflow-hidden rounded-2xl shadow-sm transition-all hover:-translate-y-1 hover:border-accent/40 hover:shadow-lg">
-      {project.image && (
-        <img
-          src={project.image}
-          alt={project.title}
-          loading="lazy"
-          className="h-40 w-full object-cover"
-        />
+      {project.video ? (
+        <video
+          controls
+          preload="metadata"
+          poster={project.image}
+          aria-label={`${project.title} demo video`}
+          className="h-40 w-full bg-black object-cover"
+        >
+          <source src={project.video} type="video/mp4" />
+        </video>
+      ) : (
+        project.image && (
+          <img
+            src={project.image}
+            alt={project.title}
+            loading="lazy"
+            className="h-40 w-full object-cover"
+          />
+        )
       )}
       <div className="p-5">
         <div className="flex flex-wrap items-baseline justify-between gap-2">

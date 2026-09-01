@@ -6,20 +6,29 @@ export const images = {
   sideAvatar: withBasePath("/images/side-avatar.jpg"),
   cs: withBasePath("/images/cs.jpg"),
   mechHero: withBasePath("/images/mech-proj1.jpg"),
-  mechAccent: withBasePath("/images/mech-proj4.jpg"),
+  mechAccent: withBasePath("/images/ml-manu-2.jpg"),
   faceTracking: withBasePath("/images/mech-proj2.jpg"),
   rotacam: withBasePath("/images/mech-proj3.jpg"),
+  alienFury: withBasePath("/images/alien-fury.jpg"),
+  dogVision: withBasePath("/images/dog-vision.jpg"),
+  empLive: withBasePath("/images/emp-live.jpg"),
+  maskDetection: withBasePath("/images/ml-mask-detection.jpg"),
+  manufacturing: withBasePath("/images/ml-manu-1.jpg"),
+  roadRash: withBasePath("/images/roadrash.jpg"),
+  unity: withBasePath("/images/unity.jpg"),
+  liftFormVisionPoster: withBasePath("/images/liftformvision-poster.jpg"),
+  liftFormVisionDemo: withBasePath("/images/liftformvision-demo.mp4"),
 };
 
 export const profile = {
   name: "Ritvik Mahapatra",
   greeting: ["Wassup gng!!!", "Ritvik here!"],
-  title: "AI Engineer — MS Computer Science @ Fresno State",
+  title: "AI Engineer, MS Computer Science @ Fresno State",
   tagline:
-    "Building end-to-end ML systems — from real-time computer vision to NLP classification pipelines — with Python, PyTorch, and TensorFlow, deployed to production on GCP with FastAPI and Docker.",
+    "I build end to end ML systems, from real time computer vision to NLP classification pipelines, using Python, PyTorch, and TensorFlow, deployed to production on GCP with FastAPI and Docker. Currently open to SDE, AI, and ML roles.",
   bio: [
     "I'm a Master's student in Computer Science at California State University, Fresno (GPA 3.87/4.00), where I also work as a Teaching Associate leading lab sessions in Computer Architecture, Data Structures, and C++. Before that, I completed a B.Tech in Mechatronics Engineering at Manipal University, Jaipur (GPA 3.52/4.00, Dean's List x7).",
-    "My work sits at the intersection of computer vision, NLP, and deployment engineering — applying pose estimation and deep learning to real-time video analysis, and building classification pipelines that go from research notebook to a live, self-improving cloud service.",
+    "My work sits at the intersection of computer vision, NLP, and deployment engineering. I apply pose estimation and deep learning to real time video analysis, and build classification pipelines that go all the way from a research notebook to a live, self improving cloud service.",
   ],
   location: "Fresno, CA",
   resumeUrl: withBasePath("/resume.pdf"),
@@ -94,6 +103,7 @@ export type Project = {
   category: ProjectCategory;
   featured?: boolean;
   image?: string;
+  video?: string;
   link?: string;
   repo?: string;
 };
@@ -103,12 +113,12 @@ export const projectCategories: Record<
   { label: string; short: string; heroImage: string }
 > = {
   mechatronics: {
-    label: "Bachelor's — Mechatronics Engineering, Manipal University Jaipur",
+    label: "Bachelor's in Mechatronics Engineering, Manipal University Jaipur",
     short: "Mechatronics",
     heroImage: images.mechHero,
   },
   cs: {
-    label: "Master's — Computer Science, CSU Fresno",
+    label: "Master's in Computer Science, CSU Fresno",
     short: "Computer Science",
     heroImage: images.cs,
   },
@@ -119,25 +129,26 @@ export const projects: Project[] = [
   {
     title: "Quality Detection using CV in Production Line",
     description:
-      "Three case studies applying ML to a manufacturing line: Random Forest failure-type prediction (90% accuracy), YOLOv3 + K-Means product segmentation on a conveyor belt, and a MobileNetV2 transfer-learning defect classifier (89.5% accuracy) exported to quantized TFLite for on-device QC inference.",
+      "Three case studies applying machine learning to a manufacturing line: a Random Forest model that predicts failure types with 90% accuracy, YOLOv3 combined with K Means clustering to segment products on a conveyor belt, and a MobileNetV2 transfer learning classifier that flags defective products with 89.5% accuracy, exported as a quantized TFLite model for on device quality control.",
     tags: ["Python", "TensorFlow", "YOLOv3", "scikit-learn", "OpenCV"],
     category: "mechatronics",
     featured: true,
+    image: images.manufacturing,
     repo: "https://github.com/ritvik-123/Major-Project-ML-in-Manufacturing",
   },
   {
-    title: "Rotacam — Object-Following Camera",
+    title: "Rotacam, an Object Tracking Camera",
     description:
-      "Arduino-based object detector and following camera with 2 degrees of freedom, using ultrasonic sensors to track and follow objects in real time.",
+      "An Arduino based object detector and following camera with two degrees of freedom, using ultrasonic sensors to track and follow objects in real time.",
     tags: ["Arduino", "C++", "Robotics"],
     category: "mechatronics",
     image: images.rotacam,
     repo: "https://github.com/ritvik-123/PBL-ObjectDetection-Follower",
   },
   {
-    title: "Face-Tracking Camera",
+    title: "Face Tracking Camera",
     description:
-      "Real-time face detection via OpenCV Haar cascades driving a two-servo (2 DOF) Arduino-controlled camera mount for continuous face tracking.",
+      "Real time face detection using OpenCV Haar cascades, driving a two servo (2 DOF) Arduino controlled camera mount for continuous face tracking.",
     tags: ["OpenCV", "Arduino", "C++"],
     category: "mechatronics",
     image: images.faceTracking,
@@ -146,17 +157,19 @@ export const projects: Project[] = [
   {
     title: "Face Mask Detection",
     description:
-      "Face mask classifier built with MobileNet and ResNet in TensorFlow, with real-time detection via an SSD face detector in OpenCV. Basis for two published papers on deep-learning approaches to face mask classification.",
+      "A face mask classifier built with MobileNet and ResNet in TensorFlow, with real time detection using an SSD face detector in OpenCV. This project became the basis for two published papers on deep learning approaches to face mask classification.",
     tags: ["TensorFlow", "MobileNet", "ResNet", "OpenCV"],
     category: "mechatronics",
+    image: images.maskDetection,
     repo: "https://github.com/ritvik-123/ML-Face-Mask-Detection",
   },
   {
     title: "Dog Breed Vision",
     description:
-      "MobileNetV2-based image classifier that predicts a dog's breed from a photo, built with TensorFlow.",
+      "A MobileNetV2 based image classifier that predicts a dog's breed from a photo, built with TensorFlow.",
     tags: ["TensorFlow", "MobileNetV2", "Computer Vision"],
     category: "mechatronics",
+    image: images.dogVision,
     repo: "https://github.com/ritvik-123/ML-Dog-Vision",
   },
 
@@ -164,51 +177,57 @@ export const projects: Project[] = [
   {
     title: "LiftFormVision",
     description:
-      "Locally-deployed computer-vision app that analyzes barbell exercise video (squat, overhead press, barbell row) and reports form errors in real time, no coach required. Squat depth-error detection reaches 0.846 F1; overhead press uses a temporal-CNN knee-error classifier. Supports video upload and live-camera capture through a Flask app running per-exercise isolated inference pipelines.",
+      "A locally deployed computer vision app that analyzes barbell exercise video (squat, overhead press, and barbell row) and reports form errors in real time, no coach required. Squat depth error detection reaches 0.846 F1, and overhead press uses a temporal CNN knee error classifier. It supports both video upload and live camera capture through a Flask app running isolated inference pipelines per exercise.",
     tags: ["Python", "Flask", "MediaPipe", "TensorFlow", "OpenCV"],
     category: "cs",
     featured: true,
+    image: images.liftFormVisionPoster,
+    video: images.liftFormVisionDemo,
     repo: "https://github.com/ritvik-123/LiftFormVision",
   },
   {
-    title: "LiftFormVision — Research & Modeling",
+    title: "EMP Sentence Classifier for Oppression Types",
     description:
-      "Master's culminating project: the modeling and experimentation behind LiftFormVision, using subsets of Fitness-AQA (real gym footage, not mocap) to engineer features, calibrate thresholds, and train the temporal-CNN knee-error classifier that the deployed app runs.",
-    tags: ["Python", "MediaPipe", "TensorFlow", "Jupyter"],
-    category: "cs",
-    repo: "https://github.com/ritvik-123/298-Major-Project",
-  },
-  {
-    title: "EMP — Oppression-Type Sentence Classifier",
-    description:
-      "Full-stack NLP system classifying sentences into 4 oppression types (ideological, institutionalized, interpersonal, internalized) using sentence embeddings + SVD + logistic regression, reaching 77.8% accuracy and 96.3% top-2 accuracy. Deployed on Google Cloud Run with GCS-based model hot-reloading and closed-loop weekly retraining from user feedback.",
+      "A full stack NLP system that classifies sentences into four oppression types (ideological, institutionalized, interpersonal, and internalized) using sentence embeddings, SVD, and logistic regression, reaching 77.8% accuracy and 96.3% top 2 accuracy. It's deployed on Google Cloud Run with GCS based model hot reloading and closed loop weekly retraining from user feedback.",
     tags: ["Python", "FastAPI", "scikit-learn", "GCP", "Docker"],
     category: "cs",
     featured: true,
+    image: images.empLive,
     link: "https://emp-project-452416352424.us-central1.run.app",
     repo: "https://github.com/ritvik-123/EMP-Project",
   },
   {
     title: "Unity VR Interaction Environment",
     description:
-      "Shared Unity/XR testbed built for a Human-Computer Interaction course — persistent XR rig, event-driven feedback, and a modular object-manipulation framework supporting 6 HCI interaction techniques, validated through user testing with 10+ participants.",
+      "A shared Unity and XR testbed built for a Human Computer Interaction course, with a persistent XR rig, event driven feedback, and a modular object manipulation framework supporting six HCI interaction techniques. Validated through user testing with over 10 participants.",
     tags: ["Unity", "C#", "XR Interaction Toolkit"],
     category: "cs",
     featured: true,
+    image: images.unity,
     repo: "https://github.com/ritvik-123/Unity-Based-VR-Environment",
   },
   {
-    title: "Alien Fury — OpenGL Endless Runner",
+    title: "Alien Fury, an OpenGL Endless Runner",
     description:
-      "3D endless-runner game built in OpenGL for an Advanced Game Development course — MD2 model animation, multi-layer parallax backgrounds, procedural obstacle spawning, and a full menu/level-progression system across 3 levels.",
+      "A 3D endless runner game built in OpenGL for an Advanced Game Development course, with MD2 model animation, multi layer parallax backgrounds, procedural obstacle spawning, and a full menu and level progression system across three levels.",
     tags: ["C++", "OpenGL"],
     category: "cs",
+    image: images.alienFury,
     repo: "https://github.com/ritvik-123/AlienFury-CSCI-291t-AGD-MidGame",
+  },
+  {
+    title: "Road Rash, an OpenGL Racing Game",
+    description:
+      "The final project for Advanced Game Development, an obstacle dodging bike racing game built in OpenGL and GLUT, with three levels, day and night environment variation, and sprite based character animation.",
+    tags: ["C++", "OpenGL", "GLUT"],
+    category: "cs",
+    image: images.roadRash,
+    repo: "https://github.com/ritvik-123/RoadRash",
   },
   {
     title: "Essay Rubric Text Classification",
     description:
-      "Classifies IELTS writing-section essays against grading rubrics (task response, coherence & cohesion, lexical resource) using fine-tuned BERT embeddings, to help graders see submissions broken down by requirement.",
+      "Classifies IELTS writing section essays against grading rubrics (task response, coherence and cohesion, and lexical resource) using fine tuned BERT embeddings, helping graders see each submission broken down by requirement.",
     tags: ["Python", "BERT", "NLP"],
     category: "cs",
     repo: "https://github.com/ritvik-123/264-Text-classification",
@@ -217,7 +236,7 @@ export const projects: Project[] = [
 
 const featuredOrder = [
   "LiftFormVision",
-  "EMP — Oppression-Type Sentence Classifier",
+  "EMP Sentence Classifier for Oppression Types",
   "Unity VR Interaction Environment",
   "Quality Detection using CV in Production Line",
 ];

@@ -1,5 +1,6 @@
 import { socials } from "@/data/content";
 import SectionHeading from "@/components/SectionHeading";
+import CopyEmailButton from "@/components/CopyEmailButton";
 
 const icons: Record<string, React.ReactNode> = {
   email: (
@@ -58,8 +59,8 @@ export default function Contact() {
     <section id="contact" className="scroll-mt-20 py-16">
       <SectionHeading>Contact</SectionHeading>
       <p className="mb-6 max-w-xl text-zinc-600 dark:text-zinc-400">
-        Feel free to reach out — I&apos;m happy to talk about projects,
-        research, or opportunities.
+        Feel free to reach out. I&apos;m happy to talk about projects, research,
+        or opportunities, especially SDE, AI, and ML roles.
       </p>
       <div className="flex flex-wrap gap-3">
         {links.map((link) => (
@@ -72,6 +73,7 @@ export default function Contact() {
             {link.label}
           </a>
         ))}
+        <CopyEmailButton email={socials.email} />
       </div>
     </section>
   );
