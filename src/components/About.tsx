@@ -4,10 +4,10 @@ import SectionHeading from "@/components/SectionHeading";
 export default function About() {
   return (
     <section id="about" className="scroll-mt-20 py-16">
-      <SectionHeading>About</SectionHeading>
+      <SectionHeading>About Me</SectionHeading>
       <div className="flex flex-col-reverse gap-8 sm:flex-row sm:items-start">
         <div className="flex-1">
-          <div className="flex flex-col gap-4 text-zinc-700 dark:text-zinc-300">
+          <div className="flex flex-col gap-4 text-zinc-800 dark:text-zinc-300">
             {profile.bio.map((paragraph, i) => (
               <p key={i} className="leading-relaxed">
                 {paragraph}

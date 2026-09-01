@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import ThemeToggle from "@/components/ThemeToggle";
 
 const links = [
-  { href: "/#about", label: "About" },
+  { href: "/#about", label: "About Me" },
   { href: "/#skills", label: "Skills" },
   { href: "/projects/cs", label: "CS Projects" },
   { href: "/projects/mechatronics", label: "Mechatronics" },
