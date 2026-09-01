@@ -9,6 +9,8 @@
   --card-strong: rgba(255, 255, 255, 0.75);
   --border: rgba(24, 24, 27, 0.12);
   --overlay: rgba(250, 250, 249, 0.93);
+  --muted: #3f3f46;
+  --muted-soft: #52525b;
 }
 
 @theme inline {
@@ -19,6 +21,8 @@
   --color-card: var(--card);
   --color-card-strong: var(--card-strong);
   --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-muted-soft: var(--muted-soft);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -33,6 +37,8 @@
     --card-strong: rgba(19, 19, 22, 0.7);
     --border: rgba(244, 244, 245, 0.12);
     --overlay: rgba(10, 10, 11, 0.8);
+    --muted: #d4d4d8;
+    --muted-soft: #a1a1aa;
   }
 }
 
@@ -45,6 +51,8 @@
   --card-strong: rgba(19, 19, 22, 0.7);
   --border: rgba(244, 244, 245, 0.12);
   --overlay: rgba(10, 10, 11, 0.8);
+  --muted: #d4d4d8;
+  --muted-soft: #a1a1aa;
 }
 
 html {

@@ -58,7 +58,7 @@ export default function Contact() {
   return (
     <section id="contact" className="scroll-mt-20 py-16">
       <SectionHeading>Contact</SectionHeading>
-      <p className="mb-6 max-w-xl text-zinc-600 dark:text-zinc-400">
+      <p className="mb-6 max-w-xl text-muted">
         Feel free to reach out. I&apos;m happy to talk about projects, research,
         or opportunities, especially SDE, AI, and ML roles.
       </p>

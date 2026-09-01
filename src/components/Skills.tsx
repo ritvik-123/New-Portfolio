@@ -14,7 +14,7 @@ export default function Skills() {
             <h3 className="shrink-0 text-xs font-semibold tracking-wide text-accent uppercase sm:w-44">
               {group.label}
             </h3>
-            <p className="text-sm text-zinc-600 dark:text-zinc-400">
+            <p className="text-sm text-muted">
               {group.skills.join(" · ")}
             </p>
           </div>

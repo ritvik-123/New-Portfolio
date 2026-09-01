@@ -18,7 +18,7 @@ export default function Hero() {
       </p>
       <h1 className="flex flex-col gap-1">
         <span
-          className="animate-fade-up text-xl font-medium text-zinc-500 dark:text-zinc-400"
+          className="animate-fade-up text-xl font-medium text-muted-soft"
           style={{ animationDelay: "100ms" }}
         >
           {profile.greeting[0]}
@@ -37,14 +37,14 @@ export default function Hero() {
         {profile.title}
       </h2>
       <p
-        className="animate-fade-up max-w-xl text-lg leading-relaxed text-zinc-600 dark:text-zinc-400"
+        className="animate-fade-up max-w-xl text-lg leading-relaxed text-muted"
         style={{ animationDelay: "280ms" }}
       >
         {profile.tagline}
       </p>
       <a
         href="#about"
-        className="absolute bottom-2 left-1/2 hidden -translate-x-1/2 animate-bounce flex-col items-center gap-1 text-xs font-medium tracking-wide text-zinc-400 uppercase hover:text-accent sm:flex"
+        className="absolute bottom-2 left-1/2 hidden -translate-x-1/2 animate-bounce flex-col items-center gap-1 text-xs font-medium tracking-wide text-muted-soft uppercase hover:text-accent sm:flex"
       >
         Scroll down
         <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5">

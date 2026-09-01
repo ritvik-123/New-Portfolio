@@ -26,11 +26,11 @@ export default function Papers() {
             <p className="mt-1 text-sm font-medium text-accent">
               {paper.venue}, {paper.year}
             </p>
-            <p className="text-sm text-zinc-500 dark:text-zinc-400">
+            <p className="text-sm text-muted-soft">
               {paper.authors}
             </p>
             {paper.abstract && (
-              <p className="mt-2 text-zinc-600 dark:text-zinc-400">
+              <p className="mt-2 text-muted">
                 {paper.abstract}
               </p>
             )}

@@ -15,7 +15,7 @@ export default function ProjectsPageHero({
     <section className="pt-10 pb-6">
       <Link
         href="/"
-        className="mb-6 inline-block text-sm text-zinc-500 underline underline-offset-4 hover:text-accent"
+        className="mb-6 inline-block text-sm text-muted-soft underline underline-offset-4 hover:text-accent"
       >
         ← Back to home
       </Link>

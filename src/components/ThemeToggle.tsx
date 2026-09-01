@@ -72,7 +72,7 @@ export default function ThemeToggle() {
       onClick={cycle}
       aria-label={`Theme: ${labels[theme]}. Click to switch.`}
       title={labels[theme]}
-      className="flex h-8 w-8 items-center justify-center rounded-full text-zinc-500 transition-colors hover:text-accent"
+      className="flex h-8 w-8 items-center justify-center rounded-full text-muted-soft transition-colors hover:text-accent"
     >
       {icons[theme]}
     </button>

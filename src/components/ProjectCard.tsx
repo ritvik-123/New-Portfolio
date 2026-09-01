@@ -25,7 +25,7 @@ export default function ProjectCard({ project }: { project: Project }) {
             {project.link && (
               <a
                 href={project.link}
-                className="text-zinc-500 underline underline-offset-4 hover:text-accent"
+                className="text-muted-soft underline underline-offset-4 hover:text-accent"
               >
                 Live
               </a>
@@ -33,14 +33,14 @@ export default function ProjectCard({ project }: { project: Project }) {
             {project.repo && (
               <a
                 href={project.repo}
-                className="text-zinc-500 underline underline-offset-4 hover:text-accent"
+                className="text-muted-soft underline underline-offset-4 hover:text-accent"
               >
                 Code
               </a>
             )}
           </div>
         </div>
-        <p className="mt-2 text-zinc-600 dark:text-zinc-400">{project.description}</p>
+        <p className="mt-2 text-muted">{project.description}</p>
         <div className="mt-3 flex flex-wrap gap-2">
           {project.tags.map((tag) => (
             <span

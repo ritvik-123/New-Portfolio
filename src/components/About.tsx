@@ -7,7 +7,7 @@ export default function About() {
       <SectionHeading>About Me</SectionHeading>
       <div className="flex flex-col-reverse gap-8 sm:flex-row sm:items-start">
         <div className="flex-1">
-          <div className="flex flex-col gap-4 text-zinc-800 dark:text-zinc-300">
+          <div className="flex flex-col gap-4 text-foreground">
             {profile.bio.map((paragraph, i) => (
               <p key={i} className="leading-relaxed">
                 {paragraph}

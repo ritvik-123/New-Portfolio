@@ -43,7 +43,7 @@ export default function Nav() {
         <Link href="/" className="font-bold tracking-tight text-accent">
           Portfolio
         </Link>
-        <ul className="flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium text-zinc-600 dark:text-zinc-400">
+        <ul className="flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium text-muted">
           {links.map((link) => {
             const isActive = link.href.startsWith("/projects") && pathname === link.href;
             return (
