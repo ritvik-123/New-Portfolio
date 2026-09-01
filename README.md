@@ -1,74 +1,67 @@
-## Portfolio Site
+# Ritvik Mahapatra, Portfolio
 
-Next.js (App Router, TypeScript, Tailwind) portfolio, statically exported for GitHub Pages.
+My personal portfolio site, built with Next.js and Tailwind CSS.
 
-### Pages
+**Live site:** https://ritvik-123.github.io/New-Portfolio/
 
-- `/` home, with Hero, About, Featured Projects (the 4 flagship projects), a chooser linking
-  to the two degree pages, Papers, Skills, and Contact.
-- `/projects/cs` all Computer Science projects (Master's, CSU Fresno).
-- `/projects/mechatronics` all Mechatronics projects (Bachelor's, Manipal University Jaipur).
+## What's here
 
-### Editing content
+- A home page with an intro, bio, skills, and the 4 projects I'd point someone to first.
+- Two dedicated project pages, one for my Master's in Computer Science work and one for my
+  Bachelor's in Mechatronics Engineering work, each with real photos and demo clips from the
+  projects themselves.
+- Publications, contact links, and a downloadable resume.
 
-All real content lives in `src/data/content.ts`: profile info, socials, skills, projects
-(tagged by category and optionally marked `featured`), and papers. Replace the values there;
-the components in `src/components` render straight from it. A project can have an `image`,
-or a `video` (rendered inline with the image as its poster), or neither. `ProjectGrid` sorts
-projects with media before those without.
+## Features
 
-Put your resume PDF at `public/resume.pdf` (or update `profile.resumeUrl`).
+- Glassmorphism styling: a blurred background photo with frosted glass panels for the nav,
+  cards, and buttons.
+- Light, dark, and system theme modes, with the choice remembered across visits.
+- A handful of accessibility and usability touches: skip to content link, visible keyboard
+  focus states, respect for reduced motion and high contrast preferences, a scroll progress
+  indicator, and a back to top button.
+- Fully static, no backend or database. All content is data driven from a single TypeScript
+  file, so the whole site can be re-skinned by editing one place.
 
-### Images and video
+## Tech stack
 
-Source images live in the gitignored `images/` folder at the project root and are never
-committed as is. Compress and resize them into `public/images/` with `sharp` before
-referencing them from `content.ts`, for example:
+- [Next.js](https://nextjs.org/) (App Router), statically exported for GitHub Pages
+- TypeScript
+- [Tailwind CSS](https://tailwindcss.com/)
+- GitHub Actions for CI/CD, deploying automatically on every push to `main`
 
-```js
-const sharp = require("sharp");
-sharp("images/photo.jpg")
-  .resize({ width: 1000 })
-  .jpeg({ quality: 82, mozjpeg: true })
-  .toFile("public/images/photo.jpg");
-```
-
-For video, `ffmpeg-static` gives you a working `ffmpeg` binary without installing anything
-system wide (`npm install --no-save ffmpeg-static`, then call the binary at
-`node_modules/ffmpeg-static/ffmpeg.exe` directly, and uninstall it again once done).
-
-### Theme
-
-The site follows the visitor's system light/dark preference by default. A toggle in the nav
-lets a visitor pin it to light or dark instead, saved in `localStorage`. A small inline script
-in `layout.tsx` applies that saved preference before first paint, so there is no flash of the
-wrong theme on load.
-
-### Local development
+## Running it locally
 
 ```
 npm install
 npm run dev
 ```
 
-### Building
+Then open `http://localhost:3000`.
 
 ```
 npm run build
 ```
 
-Outputs a static site to `out/`.
+builds the static site into `out/`.
 
-### Deploying to GitHub Pages
+## Using this as a template
 
-Repo: https://github.com/ritvik-123/New-Portfolio, site is served at
-`https://ritvik-123.github.io/New-Portfolio/`.
+Everything shown on the site (bio, projects, papers, skills, social links) lives in
+`src/data/content.ts`. Point that file at your own information and swap the photos in
+`public/images/` to make this your own. A couple of notes if you do:
 
-1. Push this project to that repo (`main` branch).
-2. In the repo settings, under **Pages**, set Source to **GitHub Actions**.
-3. Push to `main`, the workflow builds and deploys automatically.
+- Source images are compressed with [`sharp`](https://sharp.pixelplumbing.com/) before landing
+  in `public/images/`; raw originals aren't committed.
+- Video (see the LiftFormVision project card) is compressed with `ffmpeg`, pulled in on demand
+  via the `ffmpeg-static` package rather than installed system wide.
+- Internal links use `next/link`, so GitHub Pages' base path is handled automatically. A plain
+  local asset link (like the resume) needs that path applied manually through the
+  `withBasePath` helper in `src/lib/basePath.ts`, since GitHub Pages serves this site from a
+  `/New-Portfolio` subpath rather than the domain root.
 
-`NEXT_PUBLIC_BASE_PATH` in `.github/workflows/deploy.yml` is already set to `/New-Portfolio`
-to match this repo name. Internal links use `next/link`, which picks up that base path
-automatically; a plain `<a href="/...">` to a local asset (like the resume) needs it applied
-manually through the `withBasePath` helper in `src/lib/basePath.ts`.
+## Deployment
+
+Pushing to `main` triggers `.github/workflows/deploy.yml`, which builds the site and deploys it
+to GitHub Pages automatically. `NEXT_PUBLIC_BASE_PATH` in that workflow is set to
+`/New-Portfolio` to match this repo's name.
