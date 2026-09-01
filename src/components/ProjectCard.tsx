@@ -1,18 +1,11 @@
 import type { Project } from "@/data/content";
+import DemoVideo from "@/components/DemoVideo";
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
     <div className="group glass overflow-hidden rounded-2xl shadow-sm transition-all hover:-translate-y-1 hover:border-accent/40 hover:shadow-lg">
       {project.video ? (
-        <video
-          controls
-          preload="metadata"
-          poster={project.image}
-          aria-label={`${project.title} demo video`}
-          className="h-40 w-full bg-black object-cover"
-        >
-          <source src={project.video} type="video/mp4" />
-        </video>
+        <DemoVideo src={project.video} poster={project.image} title={project.title} />
       ) : (
         project.image && (
           <img
@@ -25,9 +18,9 @@ export default function ProjectCard({ project }: { project: Project }) {
       )}
       <div className="p-5">
         <div className="flex flex-wrap items-baseline justify-between gap-2">
-          <h4 className="text-lg font-semibold transition-colors group-hover:text-accent">
+          <h3 className="text-lg font-semibold transition-colors group-hover:text-accent">
             {project.title}
-          </h4>
+          </h3>
           <div className="flex gap-3 text-sm">
             {project.link && (
               <a

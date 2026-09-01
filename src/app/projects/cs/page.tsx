@@ -4,7 +4,7 @@ import ProjectsPageHero from "@/components/ProjectsPageHero";
 import ProjectGrid from "@/components/ProjectGrid";
 
 export const metadata: Metadata = {
-  title: "CS Projects — Ritvik Mahapatra",
+  title: "CS Projects, Ritvik Mahapatra",
 };
 
 export default function CsProjectsPage() {

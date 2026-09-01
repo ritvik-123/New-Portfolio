@@ -44,10 +44,10 @@ export default function Hero() {
       </p>
       <a
         href="#about"
-        aria-label="Scroll to About section"
-        className="absolute bottom-2 left-1/2 hidden -translate-x-1/2 animate-bounce text-zinc-400 hover:text-accent sm:block"
+        className="absolute bottom-2 left-1/2 hidden -translate-x-1/2 animate-bounce flex-col items-center gap-1 text-xs font-medium tracking-wide text-zinc-400 uppercase hover:text-accent sm:flex"
       >
-        <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6">
+        Scroll down
+        <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5">
           <path
             d="M6 9l6 6 6-6"
             stroke="currentColor"

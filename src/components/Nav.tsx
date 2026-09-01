@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const links = [
   { href: "/#about", label: "About" },
@@ -60,6 +61,7 @@ export default function Nav() {
             );
           })}
         </ul>
+        <ThemeToggle />
       </nav>
       <div
         className="h-0.5 bg-accent transition-[width] duration-150"

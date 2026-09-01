@@ -4,7 +4,7 @@ import ProjectsPageHero from "@/components/ProjectsPageHero";
 import ProjectGrid from "@/components/ProjectGrid";
 
 export const metadata: Metadata = {
-  title: "Mechatronics Projects — Ritvik Mahapatra",
+  title: "Mechatronics Projects, Ritvik Mahapatra",
 };
 
 export default function MechatronicsProjectsPage() {

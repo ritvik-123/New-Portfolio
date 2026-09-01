@@ -17,10 +17,19 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ritvik Mahapatra — Portfolio",
+  title: "Ritvik Mahapatra, Portfolio",
   description:
-    "AI Engineer building end-to-end ML systems — computer vision, NLP, and deployment engineering.",
+    "AI Engineer building end to end ML systems, spanning computer vision, NLP, and deployment engineering.",
 };
+
+const themeInitScript = `
+try {
+  var theme = localStorage.getItem('theme');
+  if (theme === 'light' || theme === 'dark') {
+    document.documentElement.dataset.theme = theme;
+  }
+} catch (e) {}
+`;
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
@@ -28,6 +37,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body
         className="min-h-full flex flex-col"
         style={{

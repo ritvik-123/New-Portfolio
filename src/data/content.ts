@@ -6,7 +6,7 @@ export const images = {
   sideAvatar: withBasePath("/images/side-avatar.jpg"),
   cs: withBasePath("/images/cs.jpg"),
   mechHero: withBasePath("/images/mech-proj1.jpg"),
-  mechAccent: withBasePath("/images/ml-manu-2.jpg"),
+  mechAccent: withBasePath("/images/mech-proj4.jpg"),
   faceTracking: withBasePath("/images/mech-proj2.jpg"),
   rotacam: withBasePath("/images/mech-proj3.jpg"),
   alienFury: withBasePath("/images/alien-fury.jpg"),

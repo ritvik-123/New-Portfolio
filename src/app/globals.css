@@ -24,7 +24,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --background: #0a0a0b;
     --foreground: #f4f4f5;
     --accent: #4ade80;
@@ -34,6 +34,17 @@
     --border: rgba(244, 244, 245, 0.12);
     --overlay: rgba(10, 10, 11, 0.8);
   }
+}
+
+:root[data-theme="dark"] {
+  --background: #0a0a0b;
+  --foreground: #f4f4f5;
+  --accent: #4ade80;
+  --accent-soft: rgba(74, 222, 128, 0.16);
+  --card: rgba(19, 19, 22, 0.45);
+  --card-strong: rgba(19, 19, 22, 0.7);
+  --border: rgba(244, 244, 245, 0.12);
+  --overlay: rgba(10, 10, 11, 0.8);
 }
 
 html {
