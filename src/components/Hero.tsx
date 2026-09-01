@@ -2,7 +2,7 @@ import { profile } from "@/data/content";
 
 export default function Hero() {
   return (
-    <section className="flex flex-col items-start gap-5 py-24">
+    <section className="relative flex min-h-[calc(85vh-5rem)] flex-col items-start justify-center gap-5 py-12">
       {profile.avatarUrl && (
         <img
           src={profile.avatarUrl}
@@ -42,6 +42,21 @@ export default function Hero() {
       >
         {profile.tagline}
       </p>
+      <a
+        href="#about"
+        aria-label="Scroll to About section"
+        className="absolute bottom-2 left-1/2 hidden -translate-x-1/2 animate-bounce text-zinc-400 hover:text-accent sm:block"
+      >
+        <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6">
+          <path
+            d="M6 9l6 6 6-6"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </a>
     </section>
   );
 }

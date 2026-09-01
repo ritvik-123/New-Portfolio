@@ -8,7 +8,7 @@ import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
-    <main className="mx-auto w-full max-w-4xl flex-1 px-6">
+    <main id="main-content" className="mx-auto w-full max-w-4xl flex-1 px-6">
       <Hero />
       <About />
       <DegreeExplorer />

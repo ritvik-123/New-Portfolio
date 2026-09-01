@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function MechatronicsProjectsPage() {
   const mechProjects = projects.filter((p) => p.category === "mechatronics");
   return (
-    <main className="mx-auto w-full max-w-4xl flex-1 px-6">
+    <main id="main-content" className="mx-auto w-full max-w-4xl flex-1 px-6">
       <ProjectsPageHero
         title={projectCategories.mechatronics.label}
         subtitle="Robotics, embedded systems, and applied ML from my Bachelor's in Mechatronics Engineering"

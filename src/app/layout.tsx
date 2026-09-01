@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import BackToTop from "@/components/BackToTop";
 import { images } from "@/data/content";
 
 const geistSans = Geist({
@@ -33,9 +34,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           backgroundImage: `linear-gradient(var(--overlay), var(--overlay)), url(${images.background})`,
         }}
       >
+        <a href="#main-content" className="skip-link">
+          Skip to content
+        </a>
         <Nav />
         {children}
         <Footer />
+        <BackToTop />
       </body>
     </html>
   );

@@ -7,6 +7,7 @@ export default function ProjectCard({ project }: { project: Project }) {
         <img
           src={project.image}
           alt={project.title}
+          loading="lazy"
           className="h-40 w-full object-cover"
         />
       )}

@@ -29,6 +29,7 @@ export default function DegreeExplorer() {
             <img
               src={card.image}
               alt={card.title}
+              loading="lazy"
               className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
