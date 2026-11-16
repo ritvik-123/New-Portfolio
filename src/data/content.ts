@@ -18,6 +18,7 @@ export const images = {
   unity: withBasePath("/images/unity.jpg"),
   liftFormVisionPoster: withBasePath("/images/liftformvision-poster.jpg"),
   liftFormVisionDemo: withBasePath("/images/liftformvision-demo.mp4"),
+  ragLive: withBasePath("/images/Rag-Live.png"),
 };
 
 export const profile = {
@@ -184,6 +185,7 @@ export const projects: Project[] = [
     tags: ["Python", "FastAPI", "LangChain", "MCP", "Firebase", "GCP"],
     category: "cs",
     featured: true,
+    image: images.ragLive,
     link: "https://rag-notes-web-nqni5adpca-uc.a.run.app",
     repo: "https://github.com/ritvik-123/rag-winner-notes-mcp",
   },
