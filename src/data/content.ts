@@ -62,7 +62,10 @@ export const skills: SkillGroup[] = [
       "OpenCV",
     ],
   },
-  { label: "Backend & Deployment", skills: ["FastAPI", "Flask", "Docker", "Groq API"] },
+  {
+    label: "Backend & Deployment",
+    skills: ["FastAPI", "Flask", "Docker", "Groq API", "LangChain", "MCP", "Firebase Auth"],
+  },
   {
     label: "Cloud & MLOps",
     skills: [
@@ -173,7 +176,17 @@ export const projects: Project[] = [
     repo: "https://github.com/ritvik-123/ML-Dog-Vision",
   },
 
-  // CS (M.S.) — 6
+  // CS (M.S.) — 7
+  {
+    title: "RAG Winner Notes",
+    description:
+      "A multi-tenant RAG knowledge base assistant that answers questions grounded in a user's own uploaded notes. Built from scratch through the full RAG stack with sentence-transformer embeddings, cosine similarity retrieval, and Groq hosted LLM generation via LangChain, then hardened into a production service with Firebase auth, per-user Firestore and Cloud Storage isolation, and PDF support. Ships both a web dashboard and an MCP server exposing an ask_notes tool for direct use from Claude Code or Claude Desktop.",
+    tags: ["Python", "FastAPI", "LangChain", "MCP", "Firebase", "GCP"],
+    category: "cs",
+    featured: true,
+    link: "https://rag-notes-web-nqni5adpca-uc.a.run.app",
+    repo: "https://github.com/ritvik-123/rag-winner-notes-mcp",
+  },
   {
     title: "LiftFormVision",
     description:
@@ -235,6 +248,7 @@ export const projects: Project[] = [
 ];
 
 const featuredOrder = [
+  "RAG Winner Notes",
   "LiftFormVision",
   "EMP Sentence Classifier for Oppression Types",
   "Unity VR Interaction Environment",
